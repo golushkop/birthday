@@ -1,0 +1,295 @@
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.full-width{
+  display: block;
+  width: 100%;
+}
+
+md-progress-bar{
+  z-index: 100;
+}
+
+.container{
+
+  padding: 0 30px;
+
+  .row {
+    position: relative;
+    margin-right: -15px;
+    margin-left: -15px;
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5 .col-6, .col-7 .col-8, .col-9, .col-10, .col-11, .col-12{
+  display: inline-block;
+}
+
+.col-12 {
+  width: 91.66666667%;
+}
+
+.col-11 {
+  width: 83.33333333%;
+}
+
+.col-10 {
+  width: 83.33333333%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-8 {
+  width: 66.66666667%;
+}
+
+.col-7 {
+  width: 58.33333333%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-5 {
+  width: 41.66666667%;
+}
+
+.col-4 {
+  width: 33.33333333%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-2 {
+  width: 16.66666667%;
+}
+
+.col-1 {
+  width: 8.33333333%;
+}
+
+.modal-inner{
+  text-align: center;
+
+  .mat-dialog-actions{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  height: 100vh;
+  //background: #c5c5c5;
+  //background-color: #EEEEEE;
+  background-color: #fff;
+}
+
+$header-height: 55px;
+
+header{
+  position: absolute;
+  top: 0;
+  height: $header-height;
+  width: 100%;
+  background: $primary-color;
+  box-shadow: 0 -10px 10px 10px #5a5a5a;
+  padding: 5px 0;
+  z-index: 3;
+
+  nav{
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    .app-title{
+      margin: 10px 0;
+      display: inline-block;
+      color: $color-white;
+    }
+
+    .canvas{
+      color: white;
+    }
+
+    .nav-list{
+      float: right;
+      color: $color-white;
+
+      a{
+        color: $color-white;
+        text-align: right;
+        font-size: 14px;
+        display: block;
+        line-height: 12px;
+      }
+    }
+  }
+
+}
+
+aside {
+  position: absolute;
+  top: 0;
+  padding-top: $header-height;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  background: $color-light-gray;
+  z-index: 1;
+
+  [md-raised-button] {
+    display: block;
+    margin: 10px 0;
+    background: $assent-color;
+  }
+}
+
+.bac-warm{
+  background: $warm-color;
+}
+
+.bac-assent{
+  background: $assent-color;
+}
+
+.bac-primary{
+  background: $primary-color;
+}
+
+main{
+  transition: all .4s;
+  position: absolute;
+  overflow: auto;
+  top: 0;
+  padding-top: $header-height;
+  z-index: 2;
+  height: 100%;
+  background: $color-white;
+  width: 100%;
+  margin-left: 0;
+  box-shadow: -10px 0px 20px -10px #5a5a5a;
+}
+
+.off-canvas {
+  main{
+    width: 80%!important;
+    margin-left: 20%!important;
+  }
+}
+
+.btn-back{
+
+}
+
+.right{
+  float: right;
+}
+
+.padding{
+  padding: 15px 0;
+}
+
+.map-block{
+  position: relative;
+}
+
+.s-table{
+  padding: 8px 16px!important;
+  color: #000!important;
+  background-color: #fff!important;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-spacing: 0;
+  border-collapse: collapse;
+
+  th, td{
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    text-align: left;
+  }
+  tbody {
+    tr{
+      user-select: none;
+    }
+    tr[disabled]{
+      color: #9c9c9c;
+    }
+
+    tr:not([disabled]) {
+      cursor: pointer;
+    }
+
+    tr:nth-child(even) {
+      background: rgba(215, 215, 215, 0.21);
+    }
+
+    tr:hover {
+      background: rgba(255, 207, 0, 0.27);
+      transition: all .3s;
+    }
+  }
+}
+
+.spinner-block {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 99999;
+
+  .spinner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+.added-form{
+  input{
+    width: 100%;
+  }
+}

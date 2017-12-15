@@ -1,0 +1,28 @@
+.display__centre {
+  display: table;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.display__centre_inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+.user-form {
+  width: 300px;
+  height: 400px;
+  margin: auto;
+  text-align: center;
+  display: table;
+  border: 1px solid #BDBDBD;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10%;
+  form {
+    margin-top: 50%;
+  }
+  mat-form-field {
+    width: 100%;
+    text-align: center;
+  }
+}

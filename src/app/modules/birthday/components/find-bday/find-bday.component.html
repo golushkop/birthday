@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="user-form">
+    <form>
+      <mat-form-field>
+        <input matInput placeholder="Введите имя пользователя" [(ngModel)]="user.name" name="name">
+      </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary" (click)="searchUser()">Найти</button>
+  </div>
+</div>
