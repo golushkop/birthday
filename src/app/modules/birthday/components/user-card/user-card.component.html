@@ -1,0 +1,26 @@
+<div [id]="popoverId">
+  <mat-list-item (click)="showTooltipOnClick()">
+    <img matListAvatar [src]="user.picture['thumbnail']" [alt]="user.name + ' picture'">
+    <h3 matLine>Name: {{user['name']}}</h3>
+    <p matLine>
+      email: <span>{{user['email']}}</span>
+    </p>
+    <p matLine>
+      phone: <span>{{user['phone']}}</span>
+    </p>
+
+  </mat-list-item>
+  <div *appPopover [popoverId]="popoverId">
+      <mat-card>
+        <mat-card-header>
+          <img mat-card-avatar [src]="user['picture']['thumbnail']">
+          <mat-card-title>{{user.name}} {{user.last_name}}</mat-card-title>
+          <mat-card-subtitle>{{user.gender}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="user['picture']['large']">
+      </mat-card>
+  </div>
+  <!--<ng-container *appPopover ></ng-container>-->
+
+  <mat-divider></mat-divider>
+</div>

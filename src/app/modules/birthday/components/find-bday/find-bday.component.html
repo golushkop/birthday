@@ -2,9 +2,26 @@
   <div class="user-form">
     <form>
       <mat-form-field>
-        <input matInput placeholder="Введите имя пользователя" [(ngModel)]="user.name" name="name">
+        <input matInput placeholder="Введите дату рождения в формате ГГГГ-ММ-ДД" [(ngModel)]="user_bithday" name="bday">
+        <button mat-icon-button color="primary" (click)="searchUser()" class="material-icons">search</button>
       </mat-form-field>
+      <form [formGroup]="reactiveForm">
+        <app-city-autocomplete-form (city_name_changed)="changed_input($event)" formControlName="city_name" name="city_name" ></app-city-autocomplete-form>
+      </form>
+      <p>form is valid: {{ reactiveForm.valid ? 'true' : 'false' }}</p>
+      <p>Value:</p><pre>{{ reactiveForm.value.city_name }}</pre>
+      <!--<form #form="ngForm">-->
+        <!--<app-city-autocomplete-form [(ngModel)]="city_name" name="result"></app-city-autocomplete-form>-->
+      <!--</form>-->
+      <!--<p>form is valid: {{ form.valid ? 'true' : 'false' }}</p>-->
+      <!--<p>Value:</p>-->
+      <!--<pre>{{ city_name }}</pre>-->
     </form>
-    <button mat-raised-button color="primary" (click)="searchUser()">Найти</button>
+
+  </div>
+  <div class="users-list col-5">
+    <mat-list *ngFor="let _user of users">
+      <app-user-card [user]="_user"></app-user-card>
+    </mat-list>
   </div>
 </div>

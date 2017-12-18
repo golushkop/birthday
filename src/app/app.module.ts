@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { routing } from "./app.module.routes";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule } from "@angular/common/http";
+import { SharedModule } from "./modules/shared/shared.module";
 
 
 @NgModule({
@@ -14,13 +16,16 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
   imports: [
     BrowserModule,
     routing,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    SharedModule.forRoot()
   ],
   providers: [
     BrowserAnimationsModule
   ],
   bootstrap: [
     AppComponent
-  ]
+  ],
+
 })
 export class AppModule { }
