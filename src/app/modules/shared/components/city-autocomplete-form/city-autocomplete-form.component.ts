@@ -28,14 +28,13 @@ export class CityAutocompleteFormComponent implements OnInit, ControlValueAccess
   ngOnInit() {
   }
   public enteringCity() {
-    console.log('input');
     const length = this.city_name.split('').length;
     this.parseError = length<=2;
     this.city_name_changed.emit({city_name: this.city_name, valid: !this.parseError});
     this.propagateChange(this.city_name);
   }
 
-  private propagateChange = (_: any) => {console.log('changed')};
+  private propagateChange = (_: any) => {};
 
   public writeValue(name: string) {
     if (name) {

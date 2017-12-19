@@ -80,7 +80,6 @@ export class FindBdayComponent implements OnInit {
   }
 
   public changed_input(event) {
-    console.log('changed');
     if (event.valid) {
       this.getAutoComplete(event.city_name)
     }
