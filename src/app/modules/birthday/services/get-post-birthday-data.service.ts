@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
 import { UrlModels } from "../../../models/url.models";
 
@@ -18,8 +18,11 @@ export class GetPostBirthdayDataService {
   }
 
   public autocomplete(city): Observable<any> {
-    return this._http.get(UrlModels.autoComplete, {headers:{'X-HB-Token':'c3b4e37d4788562fc632d6f0ca09cbe7'},
-      params: {'expanded': 0, 'term': city}})
+    let options = {
+      headers: new HttpHeaders({'X-HB-Token':'c3b4e37d4788562fc632d6f0ca09cbe7'}),
+      params: new HttpParams().set('expanded', '0').set('term', city)
+    };
+    return this._http.get(UrlModels.autoComplete, options)
   }
 
 }

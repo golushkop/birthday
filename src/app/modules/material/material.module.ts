@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {
   MatButtonModule, MatInputModule, MatOptionModule, MatSelectModule, MatTabsModule,
-  MatSnackBarModule, MatCardModule, MatTableModule, MatListModule,
+  MatSnackBarModule, MatCardModule, MatTableModule, MatListModule, MatAutocompleteModule,
 } from '@angular/material';
 import {CommonModule} from "@angular/common";
 
@@ -16,7 +16,8 @@ import {CommonModule} from "@angular/common";
     MatSnackBarModule,
     MatCardModule,
     MatTableModule,
-    MatListModule
+    MatListModule,
+    MatAutocompleteModule
   ],
   exports: [
     MatButtonModule,
@@ -27,7 +28,8 @@ import {CommonModule} from "@angular/common";
     MatSnackBarModule,
     MatCardModule,
     MatTableModule,
-    MatListModule
+    MatListModule,
+    MatAutocompleteModule
   ],
   providers:[
   ],

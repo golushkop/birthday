@@ -14,6 +14,7 @@ export class FindBdayComponent implements OnInit {
   public users: Array<User>;
   public city_name: string;
   public reactiveForm: FormGroup;
+  public cities: Array<string> = [];
 
 
   constructor(private _getDataService: GetPostBirthdayDataService,
@@ -54,7 +55,6 @@ export class FindBdayComponent implements OnInit {
             }).join('');
             this.users.push(new User(user_data.name['first'], user_data.gender, user_data.name['last'],
               user_data.picture, user_data.phone, user_data.email));
-            console.log(this.users);
           } else {
             this.getUser(res['results'][0]['email'])
           }
@@ -80,6 +80,7 @@ export class FindBdayComponent implements OnInit {
   }
 
   public changed_input(event) {
+    console.log('changed');
     if (event.valid) {
       this.getAutoComplete(event.city_name)
     }
@@ -92,7 +93,8 @@ export class FindBdayComponent implements OnInit {
     this._getDataService.autocomplete(event)
       .subscribe(
         (res: any)=> {
-          console.log(res)
+          this.cities = [];
+          this.cities = res.response['cities'].map(x=> {return x.name});
         })
   }
 

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, forwardRef, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, forwardRef, Input, OnInit, Output} from '@angular/core';
 import {ControlValueAccessor, FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR, Validator} from "@angular/forms";
 
 @Component({
@@ -22,7 +22,7 @@ export class CityAutocompleteFormComponent implements OnInit, ControlValueAccess
   private parseError=true;
   public city_name: string;
   @Output() private city_name_changed = new EventEmitter();
-
+  @Input('options') options: Array<string> = [];
   constructor() { }
 
   ngOnInit() {
